@@ -24,7 +24,7 @@ bot.on("message", (msg) => {
   } else {
     const coinName = msg.text.toString();
     axios
-      .get(`https://api.coingecko.com/api/v3/coins/${coinName}`)
+      .get(`https://api.coingecko.com/api/v3/coins/${coinName.toLowerCase}`)
       .then((response) => {
         const data = response.data;
         const message = `Name:\t${data.name}\nSymbol:\t${
